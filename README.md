@@ -14,36 +14,36 @@ Now after cherry picking you need other patches and configurations.
 Installing ZRAM
     Open the terminal create the zram.conf file 
     
-        sudo nano /etc/modules-load.d/zram.conf
+      sudo nano /etc/modules-load.d/zram.conf
         
    Paste this inside the file zram.conf and save and exit 
         
-        zram
+      zram
     
    Create another new file 
     
-       sudo nano /etc/modprobe.d/zram.conf
+     sudo nano /etc/modprobe.d/zram.conf
        
    Paste this inside the file zram.conf and save and exit
     
-        options zram num_devices=1
+      options zram num_devices=1
         
    For configuring the size of the ZRAM create new file
         
-        sudo nano /etc/udev/rules.d/99-zram.rules
+      sudo nano /etc/udev/rules.d/99-zram.rules
         
    Paste this inside the file and currently I will suggest the size to be 8Gib but you can increase if you want.
         
-        KERNEL=="zram0", ATTR{disksize}="8192M",TAG+="systemd"
+      KERNEL=="zram0", ATTR{disksize}="8192M",TAG+="systemd"
         
 
 After this the ZRAM is created but its better if you disable traditional swap
     Open the terminal and edit the fstab file and put a `#` in the line of swap.
       
-      sudo nano /etc/fstab
+    sudo nano /etc/fstab
       
-      # swap was on /dev/sda7 during installation
-      #UUID=5ad493cf-6f4a-42ab-9b41-7f6bf9167b3e none            swap    sw              0>
+    # swap was on /dev/sda7 during installation
+    #UUID=5ad493cf-6f4a-42ab-9b41-7f6bf9167b3e none            swap    sw              0>
  
    Something like that will be the output.
 
@@ -81,11 +81,14 @@ Now to check if ZRAM is working run this.
     
 And you will see zram like this
 
-        /dev/zram0                              partition	8388604	538860	-2
+    /dev/zram0                              partition	8388604	538860	-2
 
 Add this to your build command so that Metalava compiles first
 
     . build/envsetup.sh && lunch <codename>_<devicename>-userdebug && make api-stubs-docs && m/make bacon
 
-Good Luck I Hope the Android R build you are trying to build compiles now. 
+Good Luck I hope the Android R build you are trying to build compiles now. 
+
+
+
 
