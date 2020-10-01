@@ -2,9 +2,9 @@
 This is the patch to fix the `out of memory heap error`.
 It occurs mainly during the compilation of Metalava.
 To fix this error run these commands in the source.
-    cd build/soong
+    `cd build/soong
     git fetch https://github.com/nparashar150/android_build_soong
-    git cherry-pick c8ba7af59acda55a16835727d1d351b8d58a5ca4
+    git cherry-pick c8ba7af59acda55a16835727d1d351b8d58a5ca4`
 Now after cherry picking you need other patches and configurations.
 
 Installing ZRAM
