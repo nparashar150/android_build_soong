@@ -14,27 +14,27 @@ Now after cherry picking you need other patches and configurations.
 Installing ZRAM
     Open the terminal create the zram.conf file 
     
-      sudo nano /etc/modules-load.d/zram.conf
+    sudo nano /etc/modules-load.d/zram.conf
         
    Paste this inside the file zram.conf and save and exit 
         
-      zram
+    zram
     
    Create another new file 
     
-     sudo nano /etc/modprobe.d/zram.conf
+    sudo nano /etc/modprobe.d/zram.conf
        
    Paste this inside the file zram.conf and save and exit
     
-      options zram num_devices=1
+    options zram num_devices=1
         
    For configuring the size of the ZRAM create new file
         
-      sudo nano /etc/udev/rules.d/99-zram.rules
+    sudo nano /etc/udev/rules.d/99-zram.rules
         
    Paste this inside the file and currently I will suggest the size to be 8Gib but you can increase if you want.
         
-      KERNEL=="zram0", ATTR{disksize}="8192M",TAG+="systemd"
+    KERNEL=="zram0", ATTR{disksize}="8192M",TAG+="systemd"
         
 
 After this the ZRAM is created but its better if you disable traditional swap
