@@ -1,5 +1,7 @@
 # Read This
-[Credits](https://github.com/gigabyte-1000)
+[Credits to](https://github.com/gigabyte-1000)
+
+
 This is the patch to fix the `out of memory heap error`.
 It occurs mainly during the compilation of Metalava.
 To fix this error run these commands in the source.
