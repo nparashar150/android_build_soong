@@ -1,6 +1,4 @@
 # Read This
-[Credits](https://github.com/gigabyte-1000)
-
 
 This is the patch to fix the `out of memory heap error`.
 It occurs mainly during the compilation of Metalava.
@@ -94,4 +92,4 @@ Good Luck I hope the Android R build you are trying to build compiles now.
 
 
 
-
+[Thank You](https://github.com/gigabyte-1000)
