@@ -1,5 +1,5 @@
 # Read This
-[Credits to](https://github.com/gigabyte-1000)
+[Credits](https://github.com/gigabyte-1000)
 
 
 This is the patch to fix the `out of memory heap error`.
