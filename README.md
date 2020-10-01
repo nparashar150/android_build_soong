@@ -2,6 +2,7 @@
 This is the patch to fix the `out of memory heap error`.
 It occurs mainly during the compilation of Metalava.
 To fix this error run these commands in the source.
+  
     cd build/soong  
     
     git fetch https://github.com/nparashar150/android_build_soong
@@ -52,19 +53,20 @@ In order to run ZRAM you need to create a system unit file.
     
 Add these lines inside the file.
 
-        [Unit]
-        Description=Swap with zram
-        After=multi-user.target
+    [Unit]
+    Description=Swap with zram
+    After=multi-user.target
 
-        [Service]
-        Type=oneshot 
-        RemainAfterExit=true
-        ExecStartPre=/sbin/mkswap /dev/zram0
-        ExecStart=/sbin/swapon /dev/zram0
-        ExecStop=/sbin/swapoff /dev/zram0
+    [Service]
+    Type=oneshot 
+    RemainAfterExit=true
+    ExecStartPre=/sbin/mkswap /dev/zram0
+    ExecStart=/sbin/swapon /dev/zram0
+    ExecStop=/sbin/swapoff /dev/zram0
 
-        [Install]
-        WantedBy=multi-user.target
+    [Install]
+    WantedBy=multi-user.target
+    
 Save and close it.
 
 To enable the ZRAM run this
