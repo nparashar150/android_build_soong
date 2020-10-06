@@ -2,15 +2,19 @@
 
 This is the patch to fix the `out of memory heap error`.
 It occurs mainly during the compilation of Metalava.
-To fix this error run these commands in the source.
+To fix this error run these commands in the source of the rom [xxx@linux:/home/customrom/lineageos]
   
-    cd build/soong  
-    
-    git fetch https://github.com/nparashar150/android_build_soong
-    
-    git cherry-pick c8ba7af59acda55a16835727d1d351b8d58a5ca4
+    cd build/soong && git fetch https://github.com/nparashar150/android_build_soong && git cherry-pick c8ba7af59acda55a16835727d1d351b8d58a5ca4
     
 Now after cherry picking you need other patches and configurations.
+
+If you want to autoconfigure zram copy paste this
+
+    sudo apt install zram-config
+    
+Then after this type this command and just put a # in front of swap if u have a swap partition or if you have a swap file you can just ignore it
+
+    sudo nano /etc/fstab
 
 Installing ZRAM
     Open the terminal create the zram.conf file 
@@ -83,6 +87,8 @@ Now to check if ZRAM is working run this.
 And you will see zram like this
 
     /dev/zram0                              partition	8388604	538860	-2
+    
+Now dont forget to restar your computer    
 
 Add this to your build command so that Metalava compiles first
 
