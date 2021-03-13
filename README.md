@@ -1,4 +1,5 @@
 # Read This
+You can see my buildscript repository for scripts which can help you a lot.
 
 This is the patch to fix the `out of memory heap error`.
 It occurs mainly during the compilation of Metalava.
